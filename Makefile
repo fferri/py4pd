@@ -6,7 +6,7 @@ uname := $(shell uname -s)
 ifeq (MINGW,$(findstring MINGW,$(uname)))
   PYTHON_INCLUDE := $(shell cat pythonincludes.txt)
   PYTHON_PATH := $(shell cat pythonpath.txt)
-  PYTHON_DLL := $(PYTHON_PATH)/python311.dll
+  PYTHON_DLL := $(PYTHON_PATH)/python310.dll
   # PYTHON_DLL = $PYTHON_PATH/python311.dll
   EXTRA_INCLUDES = -I $(PYTHON_INCLUDE) 
   cflags = -I $(PYTHON_INCLUDE) -Wno-cast-function-type -Wno-unused-variable 
