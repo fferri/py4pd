@@ -1,0 +1,1654 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../puredata-users/">
+      
+      
+        <link rel="next" href="../libraries/">
+      
+      <link rel="icon" href="../assets/py4pd-favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Python Users - py4pd</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-users" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="py4pd" class="md-header__button md-logo" aria-label="py4pd" data-md-component="logo">
+      <img id="logo_light_mode" src="../assets/py4pd-light.svg" alt="logo">
+<img id="logo_dark_mode" src="../assets/py4pd-dark.svg" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            py4pd
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Users
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlesneimog/py4pd" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup/" class="md-tabs__link">
+      Installation
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../puredata-users/" class="md-tabs__link">
+      py4pd Object
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Python Users
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../libraries/" class="md-tabs__link">
+      External Libraries
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="py4pd" class="md-nav__button md-logo" aria-label="py4pd" data-md-component="logo">
+      <img id="logo_light_mode" src="../assets/py4pd-light.svg" alt="logo">
+<img id="logo_dark_mode" src="../assets/py4pd-dark.svg" alt="logo">
+    </a>
+    py4pd
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlesneimog/py4pd" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puredata-users/" class="md-nav__link">
+        py4pd Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python Users
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python Users
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pd-objects-with-python" class="md-nav__link">
+     Pd Objects with Python 
+  </a>
+  
+    <nav class="md-nav" aria-label="Pd Objects with Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-objects" class="md-nav__link">
+     Types of Objects 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embbeded-module-with-py4pd" class="md-nav__link">
+     Embbeded Module with py4pd 
+  </a>
+  
+    <nav class="md-nav" aria-label="Embbeded Module with py4pd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-puredata-objects" class="md-nav__link">
+     Write PureData Objects 
+  </a>
+  
+    <nav class="md-nav" aria-label="Write PureData Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdaddobject" class="md-nav__link">
+     pd.addobject 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchanging-data" class="md-nav__link">
+     Exchanging Data 
+  </a>
+  
+    <nav class="md-nav" aria-label="Exchanging Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdout" class="md-nav__link">
+     pd.out 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdsend" class="md-nav__link">
+     pd.send 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdtabwrite" class="md-nav__link">
+     pd.tabwrite 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdtabread" class="md-nav__link">
+     pd.tabread 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdgetkey" class="md-nav__link">
+     pd.getkey 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-for-the-user" class="md-nav__link">
+     Info for the user 
+  </a>
+  
+    <nav class="md-nav" aria-label="Info for the user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdprint" class="md-nav__link">
+     pd.print 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pderror" class="md-nav__link">
+     pd.error 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilities" class="md-nav__link">
+     Utilities 
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdgetstrpointer" class="md-nav__link">
+     pd.getstrpointer 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdgetglobalvar" class="md-nav__link">
+     pd.getglobalvar 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdsetglobalvar" class="md-nav__link">
+     pd.setglobalvar 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+     Images 
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdshow" class="md-nav__link">
+     pd.show 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+     File Management 
+  </a>
+  
+    <nav class="md-nav" aria-label="File Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdhome" class="md-nav__link">
+     pd.home 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdtempfolder" class="md-nav__link">
+     pd.tempfolder 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdpy4pdfolder" class="md-nav__link">
+     pd.py4pdfolder 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-info" class="md-nav__link">
+     Audio Info 
+  </a>
+  
+    <nav class="md-nav" aria-label="Audio Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdsamplerate" class="md-nav__link">
+     pd.samplerate 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdvecsize" class="md-nav__link">
+     pd.vecsize 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/" class="md-nav__link">
+        External Libraries
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="python-users">Python Users</h1>
+<p>If you're using Python and PureData together, you can use the pd module within the py4pd package to exchange data, set configurations, and inform users of errors, among other things. This module is embedded in the <code>py4pd</code> code and is only accessible within the <code>py4pd</code> environment. It's similar to how Google Collab uses modules like <code>google.collab.drive</code> and <code>google.collab.widgets</code>. In the next section I present all the methods that are embbeded.</p>
+<h2 id="pd-objects-with-python"><h2 style="text-align:center"> <strong>Pd Objects with Python</strong> </h2></h2>
+<p>With the <code>py4pd</code> it is possible to create new PureData objects using Python. For that, you need to declare your Python functions and then create a function called <code>py4pdLoadObjects</code>. Inside this function we use <code>pd.addobject</code> (check the <a href="https://www.charlesneimog.com/py4pd/python-users/#pdaddobject">docs</a>) to add all functions that you want to use as objects.</p>
+<p>See the Python Code:</p>
+<div class="highlight"><span class="filename">myNewPdObjects.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">mysumObject</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span>
+
+<span class="k">def</span> <span class="nf">py4pdLoadObjects</span><span class="p">():</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">mysumObject</span><span class="p">,</span> <span class="s2">&quot;mysumObject&quot;</span><span class="p">)</span> <span class="c1"># function, string with name of the object</span>
+
+    <span class="c1"># My License, Name and University, others information</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;GPL3 | by Charles K. Neimog&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;University of São Paulo&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>In the code above, we create a new object called <code>mysymObject</code>. It is saved inside an script called <code>myNewPdObjects.py</code>. To load this script in PureData how need to follow these steps:</p>
+<ul>
+<li>Copy the script <code>myNewPdObjects.py</code> for the folder where your PureData patch is.</li>
+<li>Create a new <code>py4pd</code> with this config: <code>py4pd -lib myNewPdObjects</code>.</li>
+<li>Create the new object, in this case <code>mysumObject</code>.</li>
+</ul>
+<p>Following this steps we have this patch:</p>
+<p align="center">
+    <img src="../examples/createobj/mynewpdobject.png" width="50%"</img>
+</p>
+
+<h3 id="types-of-objects"><h3 style="text-align:center"> <strong>Types of Objects</strong> </h3></h3>
+<p>In the example above we create ordinary objects. With <code>py4pd</code> we can create 5 types of objects: </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ordinary Objects</label><label for="__tabbed_1_2">Visualization Objects</label><label for="__tabbed_1_3">Audio In Objects</label><label for="__tabbed_1_4">Audio Out Objects</label><label for="__tabbed_1_5">Audio (in and out) Objects</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Used to create functions like sum numbers, convertion between datas (svg to scores, for example), etc.</p>
+</div>
+<div class="tabbed-block">
+<p>Used to create functions to show something. Like Scores, Audio descriptors, and others.</p>
+<p>To create vis object, in <code>pd.addobject</code> we add the <code>objtype=pd.VIS</code>. Inside the function, we always need the <code>pd.show</code> method, without it, anything will be showed. 
+For <code>pd.VIS</code> objects, we have some options in <code>pd.addobject</code>.</p>
+<ul>
+<li><code>figsize</code>: It set the size of the figure that will be showed, this is more for aesthetic reasons (the figure will always be resized).</li>
+</ul>
+<p>See the example:</p>
+<details class="example end">
+<summary>Python Code</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">audioflux</span> <span class="k">as</span> <span class="nn">af</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">audioflux.display</span> <span class="kn">import</span> <span class="n">fill_plot</span><span class="p">,</span> <span class="n">fill_wave</span>
+<span class="kn">from</span> <span class="nn">audioflux.type</span> <span class="kn">import</span> <span class="n">SpectralFilterBankScaleType</span><span class="p">,</span> <span class="n">SpectralDataType</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">descriptors</span><span class="p">():</span>
+    <span class="n">audio_arr</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">af</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/Hp-ord-A4-mf-N-N.wav&quot;</span><span class="p">)</span>
+    <span class="n">bft_obj</span> <span class="o">=</span> <span class="n">af</span><span class="o">.</span><span class="n">BFT</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2049</span><span class="p">,</span> <span class="n">samplate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">radix2_exp</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">slide_length</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+                   <span class="n">data_type</span><span class="o">=</span><span class="n">SpectralDataType</span><span class="o">.</span><span class="n">MAG</span><span class="p">,</span>
+                   <span class="n">scale_type</span><span class="o">=</span><span class="n">SpectralFilterBankScaleType</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
+    <span class="n">spec_arr</span> <span class="o">=</span> <span class="n">bft_obj</span><span class="o">.</span><span class="n">bft</span><span class="p">(</span><span class="n">audio_arr</span><span class="p">)</span>
+    <span class="n">spec_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">spec_arr</span><span class="p">)</span>
+    <span class="n">spectral_obj</span> <span class="o">=</span> <span class="n">af</span><span class="o">.</span><span class="n">Spectral</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="n">bft_obj</span><span class="o">.</span><span class="n">num</span><span class="p">,</span>
+                               <span class="n">fre_band_arr</span><span class="o">=</span><span class="n">bft_obj</span><span class="o">.</span><span class="n">get_fre_band_arr</span><span class="p">())</span>
+    <span class="n">n_time</span> <span class="o">=</span> <span class="n">spec_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Or use bft_obj.cal_time_length(audio_arr.shape[-1])</span>
+    <span class="n">spectral_obj</span><span class="o">.</span><span class="n">set_time_length</span><span class="p">(</span><span class="n">n_time</span><span class="p">)</span>
+    <span class="n">hfc_arr</span> <span class="o">=</span> <span class="n">spectral_obj</span><span class="o">.</span><span class="n">hfc</span><span class="p">(</span><span class="n">spec_arr</span><span class="p">)</span>
+    <span class="n">cen_arr</span> <span class="o">=</span> <span class="n">spectral_obj</span><span class="o">.</span><span class="n">centroid</span><span class="p">(</span><span class="n">spec_arr</span><span class="p">)</span> 
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fill_wave</span><span class="p">(</span><span class="n">audio_arr</span><span class="p">,</span> <span class="n">samplate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hfc_arr</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">bft_obj</span><span class="o">.</span><span class="n">slide_length</span> <span class="o">/</span> <span class="n">bft_obj</span><span class="o">.</span><span class="n">samplate</span><span class="p">)</span>
+    <span class="n">fill_plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">hfc_arr</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;hfc&#39;</span><span class="p">)</span>
+    <span class="n">fill_plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">cen_arr</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Centroid&quot;</span><span class="p">)</span>
+    <span class="n">tempfile</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">tempfolder</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/descritores.png&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">tempfile</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">tempfile</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Data plotted&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">py4pdLoadObjects</span><span class="p">():</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="s2">&quot;descritores&quot;</span><span class="p">,</span> <span class="n">objtype</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">VIS</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<p><p align="center">
+    <img src="../examples/descriptors/descriptors.png" width="50%" alt="Descriptors Image">
+</p></p>
+</div>
+<div class="tabbed-block">
+<p>Used to output analised data from audio. Objects with Partial Trackings, Audio Descriptors, and others.</p>
+<p>To create Audio In object, in <code>pd.addobject</code> we add the <code>objtype=pd.AUDIOIN</code>. </p>
+<div class="admonition warning">
+<p class="admonition-title">The first inlet of this objects always need to be audio</p>
+</div>
+<p><p align="center">
+    <img src="../examples/audioin/audioin.png" width="50%" alt="Audio Input Image">
+</p></p>
+<details class="example end">
+<summary>Python Code</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="k">def</span> <span class="nf">audioin</span><span class="p">(</span><span class="n">audio</span><span class="p">):</span>
+    <span class="n">fft</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
+    <span class="n">fft</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">fft</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">fft</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="c1"># numpy can just be outputed when pyout=True</span>
+
+<span class="k">def</span> <span class="nf">py4pdLoadObjects</span><span class="p">():</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">audioin</span><span class="p">,</span> <span class="s2">&quot;audioin&quot;</span><span class="p">,</span> <span class="n">objtype</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">AUDIOIN</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+<div class="tabbed-block">
+<p>Used to create audio using Python. Objects that creates sinusoids, some special noise and others.</p>
+<p>To create Audio out object, in <code>pd.addobject</code> we add the <code>objtype=pd.AUDIOOUT</code>. </p>
+<p><p align="center">
+    <img src="../examples/audioout/audioout.png" width="50%" alt="Audio Output Image">
+</p></p>
+<details class="example end">
+<summary>Python Code</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="k">def</span> <span class="nf">audioin</span><span class="p">(</span><span class="n">audio</span><span class="p">):</span>
+    <span class="n">fft</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
+    <span class="n">fft</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">fft</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">fft</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="c1"># numpy can just be outputed when pyout=True</span>
+
+<span class="k">def</span> <span class="nf">py4pdLoadObjects</span><span class="p">():</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">audioin</span><span class="p">,</span> <span class="s2">&quot;audioin&quot;</span><span class="p">,</span> <span class="n">objtype</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">AUDIOIN</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+<div class="tabbed-block">
+<p>Used to manipulations of Audio. FFT, reverbs, and others. </p>
+<p>To create Audio object (audio input and output), in <code>pd.addobject</code> we add the <code>objtype=pd.AUDIO</code>. </p>
+<p><p align="center">
+    <img src="../examples/audio/audio.png" width="50%" alt="Audio Image">
+</p></p>
+<details class="example end">
+<summary>Python Code</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="k">def</span> <span class="nf">audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">amplitude</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">amplitude</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">audio</span>
+
+
+<span class="k">def</span> <span class="nf">py4pdLoadObjects</span><span class="p">():</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="n">objtype</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">AUDIO</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="embbeded-module-with-py4pd"><h2 style="text-align:center"> <strong>Embbeded Module with <code>py4pd</code></strong> </h2></h2>
+<hr />
+<h3 id="write-puredata-objects"><h3 style="text-align:center"> <strong>Write PureData Objects</strong> </h3></h3>
+<h4 id="pdaddobject"><h4 style="text-align:center"> <code>pd.addobject</code> </h4></h4>
+<p>You can create your own objects with Python. For that, you define the Python Function and add it as an object using <code class="highlight"><span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">()</span></code>.</p>
+<details class="danger">
+<summary>Breaking Changes</summary>
+<p>I had change how <code>pd.addobject</code> work from version <code>0.6</code> to version <code>0.7</code>. Now, me use the function and the Pure Data object. Instead of use this, <code>pd.addobject("mysumObject", "NORMAL", "myNewPdObjects", "mysumObject")</code> we use this <code>pd.addobject(mysumObject, "mysumObject")</code>.</p>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Parameters</label><label for="__tabbed_2_2">Keywords</label><label for="__tabbed_2_3">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>Python Function</code></td>
+<td align="center">Function that will be executed by the object.</td>
+</tr>
+<tr>
+<td align="center"><code>arg2</code></td>
+<td align="center"><code>String</code></td>
+<td align="center">String to create the object.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Keyword</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>objtype</code></td>
+<td align="center"><code>pd</code></td>
+<td align="center">The type of the object: <code>pd.VIS</code>, <code>pd.AUDIO</code>, <code>pd.AUDIOIN</code>, or <code>pd.AUDIOOUT</code>. Hiding this option will create a normal object.</td>
+</tr>
+<tr>
+<td align="center"><code>figsize</code></td>
+<td align="center"><code>Tuple</code></td>
+<td align="center">Sets the pixel size of the object. Example: <code>figsize=(400, 200)</code> creates an object with a width of 400 and height of 200.</td>
+</tr>
+<tr>
+<td align="center"><code>pyout</code></td>
+<td align="center"><code>Boolean</code></td>
+<td align="center">Determines whether the output will be in PureData data types or Python. If set to Python, it cannot be used by PureData.</td>
+</tr>
+<tr>
+<td align="center"><code>no_outlet</code></td>
+<td align="center"><code>Boolean</code></td>
+<td align="center">Creates an object with no outlets if set to <code>True</code>.</td>
+</tr>
+<tr>
+<td align="center"><code>added2pd_info</code></td>
+<td align="center"><code>Boolean</code></td>
+<td align="center">Prints the message <code>"[py4pd]: Object {objectName} added to PureData"</code> when set to <code>True</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">myFunction</span><span class="p">,</span> <span class="s2">&quot;mypyobj&quot;</span><span class="p">,</span> 
+            <span class="n">objtype</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">VIS</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> 
+            <span class="n">pyout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">no_outlet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">added2pd_info</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+
+<span class="k">def</span> <span class="nf">mysumObject</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span>
+
+<span class="k">def</span> <span class="nf">py4pdLoadObjects</span><span class="p">():</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">addobject</span><span class="p">(</span><span class="n">mysumObject</span><span class="p">,</span> <span class="s2">&quot;mysumObject&quot;</span><span class="p">)</span>
+
+    <span class="c1"># My License, Name and University, others information</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;GPL3 2023, Your Name&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;University of São Paulo&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>Here we add the function <code>mysumObject</code> in PureData enviroment. For more infos read the <a href="https://www.charlesneimog.com/py4pd/researchers/">Python Objects</a> page.</p>
+<p><p align="center">
+    <img src="../examples/createobj/mynewpdobject.png" width="50%" alt="My New PD Object">
+</p></p>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="exchanging-data"><h3 style="text-align:center"> <strong>Exchanging Data</strong> </h3></h3>
+<p>These are the methods used to send data from Python to PureData. The inverse path is done mainly with <code>run</code> and <code>key</code> messages. 
+<br></p>
+<hr />
+<h4 id="pdout"><h4 style="text-align:center"> <code>pd.out</code> </h4></h4>
+<p><code class="highlight"><span class="n">pd</span><span class="o">.</span><span class="n">out</span><span class="p">()</span></code> allows you to output data to PureData without needing to wait for the Python function to finish executing. This is different from returning data to PureData using the <code class="highlight"><span class="k">return</span></code> statement, which requires the function to complete before sending data. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Parameters</label><label for="__tabbed_3_2">Keywords</label><label for="__tabbed_3_3">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">Python thing that will be outputed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>symbol</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">It prepend the string in the output, can be used with <code>route</code> object.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>For example, consider the following function:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+
+<span class="k">def</span> <span class="nf">example_pdout</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;loop&quot;</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="s2">&quot;fim&quot;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;end&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</p>
+<hr />
+<h4 id="pdsend"><h4 style="text-align:center"> <code>pd.send</code> </h4></h4>
+<p>You can use <code>pd.send</code> to send data to a receive object in your PureData patch. This method takes in two arguments: the name of the <code>receive</code> object and the value you want to send. For instance, suppose you have a receive object named "myReceiver" in your patch. To send the value 42 to this object, you could use <code>pd.send("myReceiver", 42)</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Parameters</label><label for="__tabbed_4_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Name of the receive object.</td>
+</tr>
+<tr>
+<td align="center"><code>arg2</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">Data that will be sent.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+
+<span class="k">def</span> <span class="nf">pd_send</span><span class="p">():</span>
+    <span class="s2">&quot;It sends a message to the py4pdreceiver receive.&quot;</span>  
+    <span class="n">pd</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;py4pdreceiver&quot;</span><span class="p">,</span> <span class="s2">&quot;hello from python!&quot;</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;py4pdreceiver&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+    <span class="n">pd</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;py4pdreceiver&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div>
+<p>In this example, it will send to <code>py4pdreceiver</code> the message <code>"hello from python!"</code>, then the number <code>1</code>, then the list <code>[1, 2, 3, 4, 5]</code>. </p>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdtabwrite"><h4 style="text-align:center"> <code>pd.tabwrite</code> </h4></h4>
+<p><code>pd.tabwrite</code> is a method that is essentially a copy of the <code>tabwrite</code> object in PureData. With this method, you can write audio or any data supported to PureData array.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Parameters</label><label for="__tabbed_5_2">Keywords</label><label for="__tabbed_5_3">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Name of the table.</td>
+</tr>
+<tr>
+<td align="center"><code>arg2</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">List or array (numpy) of numbers.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Keyword</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>rezise</code></td>
+<td align="center"><code>Boolean</code></td>
+<td align="center">Set if the table will be resized or not.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>  <span class="n">pd</span><span class="o">.</span><span class="n">tabwrite</span><span class="p">(</span><span class="s2">&quot;table2test&quot;</span><span class="p">,</span> <span class="n">randomNumbers</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdtabread"><h4 style="text-align:center"> <code>pd.tabread</code> </h4></h4>
+<p><code>pd.tabread</code> is a method that is essentially a copy of the <code>tabread</code> object in PureData. With this method, you can read data from a PureData array directly from within your Python code. It will return one Numpy Array with the data of the table.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Parameters</label><label for="__tabbed_6_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Name of the table.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">readFromArray</span><span class="p">():</span>
+    <span class="n">valuesFromArray</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">tabread</span><span class="p">(</span><span class="s2">&quot;py4pdArray&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">valuesFromArray</span> <span class="c1"># This code don&#39;t make any sense :), but you understand it.</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdgetkey"><h4 style="text-align:center"> <code>pd.getkey</code> </h4></h4>
+<p>With <code>pd.getkey</code>, you can retrieve the value of a specific key that has been set by the user in a <code>key</code> message to <code>py4pd</code> objects. For example, if the user sends a key message to <code>py4pd</code> with the name "fft-size" and a value of 1024, you can retrieve this value in your Python code using <code>pd.getkey("fft-size")</code>. If the user hasn't defined a particular key, <code>pd.getkey</code> will return <code>None</code>, allowing you to set a default value if necessary.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Parameters</label><label for="__tabbed_7_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Name of the key.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">someAudioFunction</span><span class="p">(</span><span class="n">audio</span><span class="p">):</span> <span class="c1"># (1)!</span>
+    <span class="n">fftvalue</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">getkey</span><span class="p">(</span><span class="s2">&quot;fft-size&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fftvalue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fftvalue</span> <span class="o">=</span> <span class="mi">2048</span> <span class="c1"># default value for fft-size key.</span>
+
+    <span class="c1"># Do something with the audio.</span>
+
+    <span class="k">return</span> <span class="n">myGreatAudioManipulation</span>
+</code></pre></div>
+<ol>
+<li>Remember, audio functions that run with <code>py4pd script myaudiofunction -audio</code> receive just one <code>arg</code> that is the audio. In Audio objects written in Python this is different.</li>
+</ol>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="info-for-the-user"><h3 style="text-align:center"> <strong>Info for the user</strong> </h3></h3>
+<p>There are two messages used to print info in the PureData console, they are <code>pd.print</code> and <code>pd.error</code>.
+<br></p>
+<hr />
+<h4 id="pdprint"><h4 style="text-align:center"> <code>pd.print</code> </h4></h4>
+<p>The ordinary function <code class="highlight"><span class="nb">print</span><span class="p">()</span></code> will not work in <code>py4pd</code> (unless that you open PureData from the terminal). So if you want to debug or print some info from the PureData console you need to use <code class="highlight"><span class="n">pd</span><span class="o">.</span><span class="n">print</span></code>. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Parameters</label><label for="__tabbed_8_2">Keywords</label><label for="__tabbed_8_3">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">Thing to print</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>show_prefix</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">When <code>False</code> it remove the string "[Python]" from the begin of the message</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span> <span class="c1"># It prints &quot;[Python] ok&quot;</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="n">show_prefix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># It prints &quot;ok&quot;.</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pderror"><h4 style="text-align:center"> <code>pd.error</code> </h4></h4>
+<p>If you want to inform errors in PureData console use <code>pd.error</code> method. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Parameters</label><label for="__tabbed_9_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Message of the error.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">arg1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># some wrong arg here ????</span>
+
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is a not valid operation&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="utilities"><h3 style="text-align:center"> <strong>Utilities</strong> </h3></h3>
+<h4 id="pdgetstrpointer"><h4 style="text-align:center"> <code>pd.getstrpointer</code> </h4></h4>
+<p>When working with audio objects, there are situations where we require global variables or variables that retain their values across different runs. For instance, when creating a Python function to generate a sine wave, we may need a global variable for the phase in order to generate a continuous waveform. However, using Python Global Variables can be problematic when working with multiple objects, as all functions would modify the phase value, potentially overwriting it unintentionally. To address this issue, we introduced the pd.getobjpointer function, which returns a unique string representing the pointer of the C object. This string is unique and can be utilized in other contexts to locate and retrieve the desired global variable. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Parameters</label><label for="__tabbed_10_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There is no <code>args</code> for this function.</p>
+</div>
+<div class="tabbed-block">
+<p>It just returns unique string.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">getstrpointer</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdgetglobalvar"><h4 style="text-align:center"> <code>pd.getglobalvar</code> </h4></h4>
+<p>When working with audio objects, we have another helpful function called <code>pd.getglobalvar</code>. This function serves a similar purpose to <code>pd.getobjpointer</code>. Here, it creates the variable automatically if it doesn't exist yet.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Parameters</label><label for="__tabbed_11_2">Keywords</label><label for="__tabbed_11_3">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Object Variable Name.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>initial_value</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">With <code>initial_value</code> you can set one initial value for the string.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>In the code snippet below, when we use <code class="highlight"><span class="n">pd</span><span class="o">.</span><span class="n">getglobalvar</span><span class="p">(</span><span class="s2">&quot;PHASE&quot;</span><span class="p">)</span></code>, it retrieves the value of the variable associated with the current running object. If the value hasn't been set yet, it will be initialized to <code>0.0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">phase</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">getglobalvar</span><span class="p">(</span><span class="s2">&quot;PHASE&quot;</span><span class="p">,</span> <span class="n">initial_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdsetglobalvar"><h4 style="text-align:center"> <code>pd.setglobalvar</code> </h4></h4>
+<p>To set new values for the variable of the object we use <code>pd.setglobalvar</code>. In audio objects, for example, this value you be saved for the next block calculation.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Parameters</label><label for="__tabbed_12_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Object Variable Name.</td>
+</tr>
+<tr>
+<td align="center"><code>arg2</code></td>
+<td align="center"><code>Python Object</code></td>
+<td align="center">Any Python Object.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">setglobalvar</span><span class="p">(</span><span class="s2">&quot;PHASE&quot;</span><span class="p">,</span> <span class="n">phase</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="images"><h3 style="text-align:center"> <strong>Images</strong> </h3></h3>
+<p><br></p>
+<h4 id="pdshow"><h4 style="text-align:center"> <code>pd.show</code> </h4></h4>
+<p>With <code>py4pd</code> you can display images inside PureData patches using Python, you can use the <code>pd.show</code> method. This method is essentially a copy of the <code>else/pic</code> object, but with an interface that allows you to easily show images from within your Python code.</p>
+<div class="admonition warning">
+<p class="admonition-title">Supported extensions</p>
+<p>You can just use <code>.png</code>, <code>.gif</code>, and <code>.ppm</code> image formats. </p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Parameters</label><label for="__tabbed_13_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>arg1</code></td>
+<td align="center"><code>string</code></td>
+<td align="center">Pathname for the image that will be showed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>This is a big code, but I like it.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">neoscore.common</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+        <span class="s2">&quot;Please, run &#39;pip install neoscore -t ./py-modules&#39; in the terminal from current folder&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">getpitchKey</span><span class="p">(</span><span class="n">pitch</span><span class="p">):</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1"># natural</span>
+        <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+        <span class="c1"># sharp</span>
+        <span class="s1">&#39;c#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;d#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;e#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;f#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;g#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;a#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;b#&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalSharp&#39;</span><span class="p">],</span>
+        <span class="c1"># flat</span>
+        <span class="s1">&#39;cb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;eb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;fb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;gb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;ab&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;bb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;accidentalFlat&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">note</span><span class="p">[</span><span class="n">pitch</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">chord</span><span class="p">(</span><span class="n">pitches</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">neoscore</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">neoscore</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+    <span class="n">py4pdTMPfolder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">tempfolder</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">py4pdTMPfolder</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.ppm&quot;</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">py4pdTMPfolder</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+                <span class="k">pass</span>
+    <span class="n">staffSoprano</span> <span class="o">=</span> <span class="n">Staff</span><span class="p">((</span><span class="n">Mm</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">Mm</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Mm</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+    <span class="n">trebleClef</span> <span class="o">=</span> <span class="s1">&#39;treble&#39;</span>
+    <span class="n">Clef</span><span class="p">(</span><span class="n">ZERO</span><span class="p">,</span> <span class="n">staffSoprano</span><span class="p">,</span> <span class="n">trebleClef</span><span class="p">)</span>
+    <span class="n">staffBaixo</span> <span class="o">=</span> <span class="n">Staff</span><span class="p">((</span><span class="n">ZERO</span><span class="p">,</span> <span class="n">Mm</span><span class="p">(</span><span class="mi">15</span><span class="p">)),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Mm</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+    <span class="n">bassClef</span> <span class="o">=</span> <span class="s1">&#39;bass&#39;</span>
+    <span class="n">Clef</span><span class="p">(</span><span class="n">ZERO</span><span class="p">,</span> <span class="n">staffBaixo</span><span class="p">,</span> <span class="n">bassClef</span><span class="p">)</span>
+    <span class="n">Path</span><span class="o">.</span><span class="n">rect</span><span class="p">((</span><span class="n">Mm</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">Mm</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Mm</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span> <span class="n">Mm</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span>
+              <span class="n">Brush</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="n">Pen</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="n">Mm</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">pitch</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+        <span class="c1"># in pitch remove not number</span>
+        <span class="n">pitchWithoutNumber</span> <span class="o">=</span> <span class="n">pitch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pitch</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">pitchOctave</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pitch</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">pitchClass</span><span class="p">,</span> <span class="n">accidental</span> <span class="o">=</span> <span class="n">getpitchKey</span><span class="p">(</span><span class="n">pitchWithoutNumber</span><span class="p">)</span>
+        <span class="n">note</span> <span class="o">=</span> <span class="p">[(</span><span class="n">pitchClass</span><span class="p">,</span> <span class="n">accidental</span><span class="p">,</span> <span class="n">pitchOctave</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">pitchOctave</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">Chordrest</span><span class="p">(</span><span class="n">Mm</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">staffBaixo</span><span class="p">,</span> <span class="n">note</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Chordrest</span><span class="p">(</span><span class="n">Mm</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">staffSoprano</span><span class="p">,</span> <span class="n">note</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">randomNumber</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">notePathName</span> <span class="o">=</span> <span class="n">py4pdTMPfolder</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">pitch</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">randomNumber</span><span class="si">}</span><span class="s2">.ppm&quot;</span>
+    <span class="n">neoscore</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">notePathName</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">neoscore</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>
+        <span class="n">notePathName</span> <span class="o">=</span> <span class="n">notePathName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">notePathName</span><span class="p">)</span> <span class="c1">## HERE THE pd.show</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+<p><p align="center">
+  <img src="../examples/score/score.gif" alt="pd.out Example" width="50%">
+</p></p>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="file-management"><h3 style="text-align:center"> <strong>File Management</strong> </h3></h3>
+<hr />
+<hr />
+<h4 id="pdhome"><h4 style="text-align:center"> <code>pd.home</code> </h4></h4>
+<p>In <code>py4pd</code>, <code>pd.home</code> is a function that returns the path to the directory where the currently-running PureData patch is located. This can be useful for accessing files and resources relative to the location of the patch. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Parameters</label><label for="__tabbed_14_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There is no <code>args</code> for this function.</p>
+</div>
+<div class="tabbed-block">
+<p>It just returns unique string with the pathname.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">home</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdtempfolder"><h4 style="text-align:center"> <code>pd.tempfolder</code> </h4></h4>
+<p><code>pd.tempfolder</code> returns one pathname to save stuff that won't be used more than once, all files inside this folder are deleted when the PureData patch is closed.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Parameters</label><label for="__tabbed_15_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There is no <code>args</code> for this function.</p>
+</div>
+<div class="tabbed-block">
+<p>It just returns unique string.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">tempfolder</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdpy4pdfolder"><h4 style="text-align:center"> <code>pd.py4pdfolder</code> </h4></h4>
+<p><code>pd.py4pdfolder</code> returns the folder where the binary of <code>py4pd</code> is located.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Parameters</label><label for="__tabbed_16_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There is no <code>args</code> for this function.</p>
+</div>
+<div class="tabbed-block">
+<p>It just returns unique string.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">py4pdfolder</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="audio-info"><h3 style="text-align:center"> <strong>Audio Info</strong> </h3></h3>
+<p><br></p>
+<h4 id="pdsamplerate"><h4 style="text-align:center"> <code>pd.samplerate</code> </h4></h4>
+<p>This get the current samplerate of PureData. You can use the <code>pd.SAMPLERATE</code> variable too.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Parameters</label><label for="__tabbed_17_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There is no <code>args</code> for this function.</p>
+</div>
+<div class="tabbed-block">
+<p>It just returns unique string.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">samplerate</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdvecsize"><h4 style="text-align:center"> <code>pd.vecsize</code> </h4></h4>
+<p>This get the current vectorsize/blocksize of PureData. You can use the <code>pd.VECSIZE</code> variable too.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Parameters</label><label for="__tabbed_18_2">Examples</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There is no <code>args</code> for this function.</p>
+</div>
+<div class="tabbed-block">
+<p>It just returns unique string.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">vecsize</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2023 | Charles K. Neimog | University of São Paulo.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/charlesneimog/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.github.com/charlesneimog/" target="_blank" rel="noopener" title="www.github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:charlesneimog@outlook.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "search.highlight", "search.suggest", "toc.integrate", "toc.follow", "navigation.instant", "header.autohide", "attr_list", "md_in_html"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
